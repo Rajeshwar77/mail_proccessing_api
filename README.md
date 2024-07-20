@@ -7,9 +7,41 @@ This project is built using FastAPI, a modern, fast (high-performance) web frame
 - **List Rules**: Retrieve a list of filtering rules that can be applied to your email inbox.
 - **Apply Rule**: Use the `apply rule` endpoint to apply a specific filtering rule to organize your inbox.
 
+## Folder format and structure
+
+```
+├── README.md
+├── alembic # Migration library
+│   ├── README
+│   ├── env.py # Migration override through code
+│   ├── script.py.mako
+│   └── versions
+│       └── 8e917efa703b_user_and_email_table_migration.py
+├── alembic.ini # Migration config
+├── app
+│   ├── __init__.py
+│   ├── api
+│   │   ├── __init__.py
+│   │   ├── endpoints.py # Restapi for the all version
+│   │   └── v1
+│   │       ├── endpoints.py # Restapi v1 for the modules like rules, .., ..
+│   │       └── rules # Module where rules will be created
+│   │           ├── __init__.py
+│   │           ├── controller.py # Business logic to setup the rules
+│   │           ├── endpoints.py # Restapi for operation specific to rule module
+│   │           ├── rule.py # file which apply the rule
+│   │           └── schema.py # See the Pydantic model of the rules, ..
+│   ├── config.py - General config with should changed based on environment
+│   ├── database.py - Configuration releated to DB.
+│   ├── dependency.py - Holding depenecy resoucres, for ex global db variable
+│   ├── main.py - Main file where the api starts
+│   └── models.py - Models which can structure the database schema
+└── requirements.txt
+```
 ## API Documentation
 
 The API documentation for this project is available in the `doc` folder. Navigate to the `doc` folder to find detailed information about the API endpoints, their expected inputs, and outputs.
+
 
 ## Installation
 To set up and run the FastAPI project from your repository, follow these steps:
