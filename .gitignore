@@ -1,0 +1,10 @@
+venv/*
+alembic/versions/*
+__pycache__/*
+.anima/*
+alembic/versions/*
+.env.local
+__pycache__/*
+*/__pycache__/*
+__pycache__
+*.pyc
