@@ -1,6 +1,7 @@
 ```bash
 tree -I venv -I "*.pyc" -I "__pycache__*/
 ```
+```
 .
 ├── README.md
 ├── alembic # Migration library
@@ -29,5 +30,6 @@ tree -I venv -I "*.pyc" -I "__pycache__*/
 │   ├── main.py - Main file where the api starts
 │   └── models.py - Models which can structure the database schema
 └── requirements.txt
+```
 
 7 directories, 21 files
